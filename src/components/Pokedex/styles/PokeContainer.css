@@ -1,0 +1,148 @@
+.poke__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-items: center;
+}
+
+.pagination__footer{
+    position: end;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 40px;
+    align-items: center;
+}
+
+.pagination__btn-prev {
+    width: 10em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(52, 91, 244, 0.584);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.pagination__btn-prev:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.pagination__next {
+    width: 10em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(52, 91, 244, 0.584);
+    transition: transform 0.3s ease;
+}
+
+.btn-disabled{
+    pointer-events: none;
+}
+
+.pagination__next:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* POKEBALL*/
+.pokemon-img-btn{
+    position: relative;
+}
+
+.child-to-body {
+    margin-top: 6rem;
+}
+
+.poke_box_text{
+    position: absolute;
+    top: calc(50% - 21px);
+    left: calc(50% - 21px);
+    z-index: 100;
+    padding: 5px;
+    pointer-events: none;
+}
+
+.poke_box{
+    cursor: pointer;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.pokeball{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset -10px 10px 0 10px #ccc;
+    animation: shake 1.25s cubic-bezier(.36,.07,.19,.97) infinite;
+    animation-play-state: paused;
+}
+
+.pokeball:hover{
+    animation-play-state: running;
+}
+
+@keyframes shake {
+    0 { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-10px, 0) rotate(-20deg); }
+    30% { transform: translate(10px, 0) rotate(20deg); }
+    50% { transform: translate(-10px, 0) rotate(-10deg); }
+    60% { transform: translate(10px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+  }
+
+.pokeball::before,
+.pokeball::after {
+  content:"";
+  position: absolute;
+}
+
+.pokeball::before {
+    background: red;
+    width: 100%;
+    height: 50%;
+  }
+
+.pokeball::after {
+    top: calc(50% - 5px);
+    width: 100%;
+    height: 10px;
+    background: #000;
+  }
+
+  .pokeball__button {
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 7px);
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 4px solid #7f8c8d;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 7px black;
+    animation: blink .5s alternate infinite;
+    animation-play-state: paused;
+    background-image: url('https://www.iconpacks.net/icons/2/free-arrow-next-icon-2825-thumb.png');
+    background-repeat: no-repeat;
+  }
+
+  .pokeball:hover .pokeball__button{
+      animation-play-state: running;
+  }
+
+  @keyframes blink {
+    from { background: #eee;}
+    to { background: #e74c3c; }
+  }
